@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: secure-ship-${{ github.workflow }}-${{ github.ref }}
+  group: secure-ship-\${{ github.workflow }}-\${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -49,7 +49,7 @@ jobs:
           paths = subprocess.run(
               ["git", "ls-files", "-z"],
               check=True, capture_output=True
-          ).stdout.split(b"\\0")
+          ).stdout.split(bytes([0]))
           findings = []
           for raw_path in paths:
               if not raw_path:
@@ -66,7 +66,7 @@ jobs:
                       findings.append(f"{path}: possible {label}")
           if findings:
               print("Potential credentials detected; remove them and rotate any exposed secret.")
-              print("\\n".join(findings))
+              print("\n".join(findings))
               sys.exit(1)
           print("No obvious Stripe live credentials found in tracked text files.")
           PY
