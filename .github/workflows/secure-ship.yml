@@ -80,3 +80,13 @@ jobs:
             exit 1
           fi
           echo "Static HTML credential check passed."
+
+      - name: Prevent public product downloads and unverified payment claims
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RniE 'raw\.githubusercontent\.com/.+\.(md|pdf|zip)|PAYMENT CONFIRMED' --include='*.html' .; then
+            echo "Public product download or static payment-confirmation claim found in HTML."
+            exit 1
+          fi
+          echo "No public raw product links or static payment-confirmation claims found in HTML."
