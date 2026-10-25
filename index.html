@@ -3,44 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elevat AI — Instant Digital Products</title>
+  <title>Elevat AI — Digital Products</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #0a0c0b; color: #f0f4f0; line-height: 1.5; }
     .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px 80px; }
     .tag { color: #7dff9b; font-weight: 700; letter-spacing: 0.08em; font-size: 13px; margin-bottom: 12px; }
     h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin-bottom: 16px; }
-    .sub { color: #a8b5a9; font-size: 18px; max-width: 640px; margin-bottom: 40px; }
+    .sub { color: #a8b5a9; font-size: 18px; max-width: 640px; margin-bottom: 28px; }
     .grid { display: grid; gap: 20px; }
     .card { background: #121512; border: 1px solid #263029; border-radius: 16px; padding: 28px; }
     .card h2 { font-size: 22px; margin-bottom: 8px; }
     .price { font-size: 32px; font-weight: 800; color: #7dff9b; margin: 12px 0; }
-    .btn { display: inline-block; background: #7dff9b; color: #071009; font-weight: 700; padding: 14px 28px; border-radius: 10px; text-decoration: none; margin-top: 16px; }
-    .btn:hover { background: #6aee8a; }
-    .muted { color: #8a968b; font-size: 14px; margin-top: 12px; }
+    .notice { border: 1px solid #a87932; background: #201a10; color: #f4d8a5; padding: 18px; border-radius: 12px; margin: 24px 0 32px; }
+    .muted { color: #a8b5a9; font-size: 14px; margin-top: 12px; }
+    .paused { display: inline-block; border: 1px solid #59645a; color: #d1d8d1; padding: 10px 14px; border-radius: 8px; margin-top: 16px; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="tag">ELEVAT AI — INSTANT DIGITAL</div>
-    <h1>Tools that sell while you sleep</h1>
-    <p class="sub">Fixed-price, instant-download products. No calls. No custom work. Built for operators who want results today.</p>
+  <main class="wrap">
+    <div class="tag">ELEVAT AI — DIGITAL PRODUCTS</div>
+    <h1>Practical tools for better workflows</h1>
+    <p class="sub">Templates and workbooks for operators who want to clarify repetitive work and improve customer follow-up.</p>
+    <section class="notice" role="status" aria-live="polite">
+      <strong>Checkout temporarily paused.</strong>
+      We are verifying secure payment confirmation and download delivery before accepting new orders. Please do not attempt to purchase until checkout is reopened.
+    </section>
     <div class="grid">
-      <div class="card">
+      <article class="card">
         <h2>The Workflow Brief Kit</h2>
-        <p>Fill-in workbook that turns any messy process into a clear, scoped AI workflow in under 20 minutes.</p>
+        <p>Fill-in workbook to map a repetitive process, define an outcome, and scope an AI workflow.</p>
         <div class="price">$47</div>
-        <a class="btn" href="https://buy.stripe.com/7sY9AUevHfDC0vV3WZ5ZC0o">Get Instant Access</a>
-        <p class="muted">Download link emailed + available on thank-you page</p>
-      </div>
-      <div class="card">
+        <span class="paused">Purchases temporarily unavailable</span>
+      </article>
+      <article class="card">
         <h2>Missed Lead Recovery System</h2>
-        <p>Ready-to-use SMS + email sequences for missed calls, new leads, quotes, no-shows, and reactivation.</p>
+        <p>Draft SMS and email sequences for missed calls, new leads, quotes, no-shows, and reactivation.</p>
         <div class="price">$39</div>
-        <a class="btn" href="https://buy.stripe.com/aFadRabjv0II4Mb5135ZC0q">Get the System</a>
-        <p class="muted">Instant access after payment</p>
-      </div>
+        <span class="paused">Purchases temporarily unavailable</span>
+      </article>
     </div>
-  </div>
+    <p class="muted">Checkout will reopen after payment verification and delivery tests pass.</p>
+  </main>
 </body>
 </html>
